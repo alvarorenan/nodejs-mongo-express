@@ -1,5 +1,5 @@
-import livro from '../models/Livro.js';
-import { autor } from '../models/Autor.js';
+import livro from "../models/Livro.js";
+import { autor } from "../models/Autor.js";
 
 class LivroController {
 
@@ -10,7 +10,7 @@ class LivroController {
     } catch (erro) {
       res.status(500).json({ message: `${erro.message} - falha na requisição` });
     }
-  };
+  }
 
   static async listarLivroPorId(req, res) {
     try {
@@ -20,7 +20,7 @@ class LivroController {
     } catch (erro) {
       res.status(500).json({ message: `${erro.message} - falha na requisição` });
     }
-  };
+  }
 
   static async cadastrarLivro(req, res) {
     const novoLivro = req.body;
@@ -42,7 +42,7 @@ class LivroController {
     } catch (erro) {
       res.status(500).json({ message: `${erro.message} - falha na atualização` });
     }
-  };
+  }
 
   static async excluirLivro(req, res) {
     try {
@@ -52,7 +52,7 @@ class LivroController {
     } catch (erro) {
       res.status(500).json({ message: `${erro.message} - falha na atualização` });
     }
-  };
+  }
 
   static async listarLivrosPorEditora(req, res) {
     const editora = req.query.editora;
@@ -63,6 +63,6 @@ class LivroController {
       res.status(500).json({ message: `${erro.message} - falha na requisição` });
     }
   }
-};
+}
 
 export default LivroController;
